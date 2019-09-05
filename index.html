@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Simple JavaScript code for footer to adopt the page layout. Footer will stick to the bottom if window has not enough content. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adaptive footer</title>
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        footer {
+            width: 100%;
+            display: block;
+
+            background: cornflowerblue;
+        }
+
+        footer .footer-list {
+
+            padding: 20px 0;
+            color: #fff;
+            width: fit-content;
+            margin: auto;
+
+
+        }
+
+        footer .footer-list a {
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo">LOGO</a>
+
+        <ul class="main-nav">
+
+            <li class="nav-item2"><a href="" class="link">About Us</a></li>
+            <li class="nav-item3"><a href="" class="link">Services</a></li>
+            <li class="nav-item4"><a href="" class="link">Contact us</a></li>
+        </ul>
+
+        <ul class="content-buttons">
+            <li><button id="add">+Add Content</button></li>
+            <li><button id="remove">Clear Content</button></li>
+            <li><button id="code" onclick="window.open('https://github.com/akshaytare/Simple-Adaptive-Footer')">View
+                    Code</button></li>
+        </ul>
+
+    </nav>
+
+
+    <section>
+        <h1>Adaptive Footer</h1>
+        <p style="font-weight: bold">Content comes below</p>
+
+        <div id="content-wrap">
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In quaerat beatae magnam libero,
+                totam tempore facilis at adipisci quam vel, quae voluptatibus vitae exercitationem, atque similique
+                pariatur molestias illo distinctio.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+
+
+        </div>
+    </section>
+
+    <footer id="main-footer">
+        <ul class="footer-list">
+            <li><a href="">Policy</a></li>
+            <li><a href="">Terms</a></li>
+            <li><a href="">Careers</a></li>
+            <li><a href="">FAQ's</a></li>
+        </ul>
+    </footer>
+
+
+
+    <script src="theme.js"></script>
+
+
+    <script>
+        /* Adaptive Footer
+        05-09-2019
+        https://github.com/akshaytare 
+
+       
+        Add id="main-footer" to the footer element
+        
+        Add this css to "#main-footer element"
+             #main-footer{
+                display block;
+                width:100%;
+                }
+        */
+
+        document.onload = positionFooter();
+
+        document.body.addEventListener("DOMSubtreeModified", positionFooter);
+
+
+        function positionFooter() {
+            let myFooterHeight = document.getElementById("main-footer").offsetHeight;
+            let bodyHeight = document.body.offsetHeight;
+
+            if ((bodyHeight + myFooterHeight) <= (window.innerHeight)) {
+                // then footer should touch bottom
+                document.getElementById("main-footer").style.bottom = "0";
+                document.getElementById("main-footer").style.position = "absolute";
+
+
+            } else {
+                // footer should remain as it is
+                document.getElementById("main-footer").style.position = "initial";
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
