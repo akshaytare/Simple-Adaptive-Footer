@@ -1,4 +1,6 @@
-﻿**Simple Adaptive Footer**
+[Click here for Demo](https://akshaytare.github.io/Simple-Adaptive-Footer/)
+
+**Simple Adaptive Footer**
 
 Simple JavaScript code for footer to adopt the page layout. Footer will stick to the bottom if page has not enough content.
 Footer will change it's position on content change without refreshing the page.
@@ -36,5 +38,4 @@ Add this script to the page -
     }    
     }    
     </script>
-
 
